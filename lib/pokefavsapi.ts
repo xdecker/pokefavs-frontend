@@ -1,9 +1,9 @@
 
-const POKEFAVAPI_URL = process.env.NEXT_PUBLIC_BACKEND_URL;
+const POKEFAVAPI_URL = process.env.NEXT_PUBLIC_API_URL;
 
 export const onSaveFavorites = async (favorites:string[]) => {
     const res = await fetch(
-      `${process.env.POKEFAVAPI_URL}/favorites`,
+      `${POKEFAVAPI_URL}/favorites`,
       {
         method: "POST",
         headers: {
