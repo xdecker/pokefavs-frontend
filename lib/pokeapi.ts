@@ -1,5 +1,7 @@
+import { PokemonResponse } from "@/interfaces/pokemonResponse";
 import { PokemonsResponse } from "@/interfaces/pokemonsResponse";
 import { SimplePokemon } from "@/interfaces/simple-pokemon";
+import { notFound } from "next/navigation";
 
 const POKEAPI_URL = process.env.POKEAPI_URL;
 
@@ -22,4 +24,17 @@ export async function searchPokemon(name: string) {
   if (!res.ok) throw new Error("Pokemon not found");
 
   return res.json();
+}
+
+export async function getDetailPokemon(name: string): Promise<PokemonResponse>  {
+  try {
+    const pokemon = await fetch(`https://pokeapi.co/api/v2/pokemon/${name}`, {
+      cache: "force-cache",
+    }).then((resp) => resp.json());
+
+    console.log("se cargó ", pokemon.name);
+    return pokemon;
+  } catch (err) {
+    notFound();
+  }
 }

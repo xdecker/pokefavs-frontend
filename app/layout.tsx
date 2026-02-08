@@ -28,9 +28,9 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <div className="bg-slate-100 overflow-y-scroll w-screen h-screen antialiased text-slate-300 selection:bg-blue-600 selection:text-white">
+        <div className="bg-slate-100 h-screen flex antialiased text-slate-300 selection:bg-blue-600 selection:text-white">
           <Sidebar />
-          <div className="p-4 xl:ml-80 w-full text-slate-900">
+          <div className="flex-1 p-4 xl:ml-72 overflow-y-auto text-slate-900">
             {children}
           </div>
         </div>
