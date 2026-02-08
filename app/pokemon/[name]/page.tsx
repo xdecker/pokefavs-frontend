@@ -1,3 +1,4 @@
+import { FavoriteButton } from "@/components/favorites/FavoriteButton";
 import { getDetailPokemon } from "@/lib/pokeapi";
 import { pokemonTypeColors } from "@/utils/pokemon/pokemonTypeColors";
 import Image from "next/image";
@@ -12,9 +13,16 @@ export default async function PokemonDetailPage(prop: Props) {
   return (
     <div className="max-w-6xl mx-auto p-4">
       <div className="bg-white rounded-2xl shadow-lg p-6">
-        <h1 className="text-3xl font-bold capitalize text-slate-800 mb-6">
-          #{pokemon.id} {pokemon.name}
-        </h1>
+        <div className="flex-row flex w-full items-center mb-2">
+          <div className="flex-1">
+            <h1 className="text-3xl font-bold capitalize text-slate-800">
+              #{pokemon.id} {pokemon.name}
+            </h1>
+          </div>
+          <div className="flex-1 text-right">
+            <FavoriteButton id={pokemon.id.toString()} name={pokemon.name} />
+          </div>
+        </div>
 
         {/* Layout */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10">

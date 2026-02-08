@@ -6,7 +6,12 @@ import { useState } from "react";
 export const Sidebar = () => {
   const menuItems: SidebarItemProps[] = [
     { title: "pokemons", path: "/", icon: <ClipboardList /> },
-    { title: "favorites", path: "/favorites", icon: <Star /> },
+    {
+      title: "favorites Selected",
+      path: "/favorites",
+      icon: <Star />,
+      showCountselecteds: true,
+    },
   ];
 
   const [open, setOpen] = useState(false);
@@ -55,6 +60,7 @@ export const Sidebar = () => {
                   title={menuItem.title}
                   icon={menuItem.icon}
                   path={menuItem.path}
+                  showCountselecteds={menuItem.showCountselecteds}
                 />
               );
             })}

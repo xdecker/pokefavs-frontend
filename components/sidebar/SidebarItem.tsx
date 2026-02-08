@@ -1,5 +1,6 @@
 "use client";
 
+import { useFavoritesStore } from "@/stores/favorites/favorites.store";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
@@ -7,9 +8,17 @@ export interface SidebarItemProps {
   path: string;
   title: string;
   icon: React.ReactNode;
+  showCountselecteds?: boolean;
 }
-export const SidebarItem = ({ path, title, icon }: SidebarItemProps) => {
+export const SidebarItem = ({
+  path,
+  title,
+  icon,
+  showCountselecteds,
+}: SidebarItemProps) => {
   const pathName = usePathname();
+
+  const total = useFavoritesStore((s) => s.favorites.length);
 
   return (
     <li>
@@ -26,6 +35,9 @@ export const SidebarItem = ({ path, title, icon }: SidebarItemProps) => {
           <p className="block antialiased font-sans text-base leading-relaxed text-inherit font-medium capitalize">
             {title}
           </p>
+          {showCountselecteds && (
+            <div className={"bg-red-950 w-10 rounded-4xl p-4"}>{total}</div>
+          )}
         </button>
       </Link>
     </li>
