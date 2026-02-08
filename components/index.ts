@@ -9,6 +9,7 @@ export { PokemonList } from "./pokemon/PokemonList";
 export { FavoriteButton } from "./favorites/FavoriteButton";
 export { FavoritesList } from "./favorites/FavoritesList";
 export { FavoritesSummary} from './favorites/FavoritesSummary';
+export {ModalCodeFavorites} from './favorites/ModalCodeFavorites';
 
 //utils
 export { EmptyListMessage } from "./EmptyListMessage";
