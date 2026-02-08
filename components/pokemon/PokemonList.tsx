@@ -15,10 +15,10 @@ export const PokemonList = ({ pokemons }: Props) => {
       })}
 
       {pokemons.length === 0 && (
-        <div className="justify-center content-center text-center mt-3">
+        <div className="flex w-full justify-center items-center py-10">
           <EmptyListMessage
             message="We dont have any pokemons to show you right now"
-            icon={<OctagonAlert className="w-15 h-15" />}
+            icon={<OctagonAlert className="w-16 h-16" />}
           />
         </div>
       )}
