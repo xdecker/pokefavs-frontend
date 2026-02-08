@@ -1,5 +1,5 @@
 "use client";
-import { ClipboardList, Star } from "lucide-react";
+import { ClipboardList, SearchCheck, Star } from "lucide-react";
 import { SidebarItem, SidebarItemProps } from "./SidebarItem";
 import { useState } from "react";
 
@@ -11,6 +11,11 @@ export const Sidebar = () => {
       path: "/favorites",
       icon: <Star />,
       showCountselecteds: true,
+    },
+    {
+      title:"Favorites by Code",
+      path:'/favorites/code',
+      icon:<SearchCheck />
     },
   ];
 

@@ -10,10 +10,15 @@ interface props {
 export const ModalCodeFavorites = ({ generatedCode, onDismiss }: props) => {
   return (
     <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
-      <div className="bg-white rounded-xl shadow-xl p-8 w-[400px] text-center">
+      <div className="bg-white rounded-xl shadow-xl p-8 w-100 text-center">
         <h2 className="text-xl font-bold text-slate-700 mb-4">
           Your Favorites Code 🎉
         </h2>
+
+        <p className="p-2 text-center font-medium">
+          You can use this code to consult your favorite list here! Every time
+          you want
+        </p>
 
         {/* Code + Copy */}
         <div className="flex items-center justify-center gap-2 mb-6">

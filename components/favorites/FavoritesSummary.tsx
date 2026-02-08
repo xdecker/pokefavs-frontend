@@ -23,11 +23,15 @@ export const FavoritesSummary = () => {
       setGeneratedCode(null);
       setLoading(true);
       //await sleep(3);
-      const response = await onSaveFavorites(
-        favorites.map((pokemon) => pokemon.name.toLowerCase())
-      );
-      setGeneratedCode(response.code);
-      toast.success("list favorites saved correctly");
+      console.log(favorites);
+      const response = await onSaveFavorites(favorites);
+      console.log(response);
+      if (response.code) {
+        setGeneratedCode(response.code);
+        toast.success("list favorites saved correctly");
+      } else {
+        toast.error(response?.error ?? "Something was wrong. Please try later");
+      }
     } catch (err: any) {
       console.log(err);
       toast.error(
