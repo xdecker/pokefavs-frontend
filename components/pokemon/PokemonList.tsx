@@ -1,6 +1,6 @@
 import { SimplePokemon } from "@/interfaces/simple-pokemon";
 import { PokemonCard } from "./PokemonCard";
-import { EmptyListMessage } from "../EmptyListMessage";
+import { EmptyListMessage } from "../ui/EmptyListMessage";
 import { OctagonAlert } from "lucide-react";
 
 interface Props {

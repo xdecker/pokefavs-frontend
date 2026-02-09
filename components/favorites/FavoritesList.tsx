@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { FileHeart, Trash2 } from "lucide-react";
-import { EmptyListMessage } from "../EmptyListMessage";
+import { EmptyListMessage } from "../ui/EmptyListMessage";
 import { FavoritesSummary } from "./FavoritesSummary";
 import { useFavoritesStore } from "@/stores/favorites/favorites.store";
 

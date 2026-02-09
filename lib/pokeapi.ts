@@ -15,7 +15,7 @@ export async function getAllPokemons(limit: number = 20, offset: number = 0) {
     id: pokemon.url.split("/").at(-2)!, //https://pokeapi.co/api/v2/pokemon/1/"
     name: pokemon.name,
   }));
-  return pokemons;
+  return { pokemons, total: response.count };
 }
 
 export async function searchPokemon(name: string) {
@@ -26,7 +26,7 @@ export async function searchPokemon(name: string) {
   return res.json();
 }
 
-export async function getDetailPokemon(name: string): Promise<PokemonResponse>  {
+export async function getDetailPokemon(name: string): Promise<PokemonResponse> {
   try {
     const pokemon = await fetch(`https://pokeapi.co/api/v2/pokemon/${name}`, {
       cache: "force-cache",
