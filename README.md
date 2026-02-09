@@ -60,6 +60,12 @@ interface SimplePokemon {
 }
 ```
 
+### Dont forget de .env
+```bash
+NEXT_PUBLIC_API_URL=http://localhost:3000
+POKEAPI_URL=https://pokeapi.co/api/v2/pokemon
+```
+
 ## How to run the project
 
 ### 1) Install dependencies
