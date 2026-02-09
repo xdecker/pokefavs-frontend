@@ -5,6 +5,7 @@ import { FileHeart, Trash2 } from "lucide-react";
 import { EmptyListMessage } from "../ui/EmptyListMessage";
 import { FavoritesSummary } from "./FavoritesSummary";
 import { useFavoritesStore } from "@/stores/favorites/favorites.store";
+import toast from "react-hot-toast";
 
 export const FavoritesList = () => {
   const favorites = useFavoritesStore((s) => s.favorites);
@@ -15,7 +16,11 @@ export const FavoritesList = () => {
       <div className="text-center self-center">
         <EmptyListMessage
           message="Your favorites list is empty."
-          icon={<div className="text-center self-center center"><FileHeart className="w-10 h-10" /></div>}
+          icon={
+            <div className="text-center self-center center">
+              <FileHeart className="w-10 h-10" />
+            </div>
+          }
         />
       </div>
     );
@@ -40,7 +45,10 @@ export const FavoritesList = () => {
           >
             {/* REMOVE */}
             <button
-              onClick={() => remove(pokemon.id)}
+              onClick={() => {
+                remove(pokemon.id);
+                toast.success("Removed from favorites");
+              }}
               className="absolute top-2 right-2 text-red-500 hover:scale-110 transition"
             >
               <Trash2 size={18} />
